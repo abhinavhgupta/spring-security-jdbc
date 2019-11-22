@@ -23,7 +23,7 @@ public class SpringSecurityConfiguration extends WebSecurityConfigurerAdapter {
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
 		auth.jdbcAuthentication()
 		.dataSource(dataSource)
-		.withDefaultSchema()
+		/*.withDefaultSchema()
 		.withUser(
 				User.withUsername("user")
 				.password("pass")
@@ -33,7 +33,7 @@ public class SpringSecurityConfiguration extends WebSecurityConfigurerAdapter {
 				User.withUsername("admin")
 				.password("pass")
 				.roles("ADMIN")
-				);
+				)*/;
 	}
 	
 	@Override
