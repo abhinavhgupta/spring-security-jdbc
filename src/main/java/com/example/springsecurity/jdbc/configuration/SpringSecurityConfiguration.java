@@ -18,11 +18,14 @@ public class SpringSecurityConfiguration extends WebSecurityConfigurerAdapter {
 	@Autowired
 	DataSource dataSource;
 	
-	
+	/**
+	 * This method is used to Authentication
+	 */
 	@Override
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
 		auth.jdbcAuthentication()
 		.dataSource(dataSource)
+		// below details has been moved to  data.sql & to schema.sql
 		/*.withDefaultSchema()
 		.withUser(
 				User.withUsername("user")
@@ -36,6 +39,9 @@ public class SpringSecurityConfiguration extends WebSecurityConfigurerAdapter {
 				)*/;
 	}
 	
+	/**
+	 * This method is used to Authorization
+	 */
 	@Override
 	protected void configure(HttpSecurity httpSecurity	) throws Exception {
 
